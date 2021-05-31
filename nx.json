@@ -42,13 +42,6 @@
     "ui-kit-e2e": {
       "tags": [],
       "implicitDependencies": ["ui-kit"]
-    },
-    "website-client": {
-      "tags": []
-    },
-    "website-client-e2e": {
-      "tags": [],
-      "implicitDependencies": ["website-client"]
     }
   }
 }
