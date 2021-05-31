@@ -1,0 +1,90 @@
+stages:
+  - build
+
+default:
+  image: 'registry.nimbusweb.co/docker/nimbus-node:16.2'
+
+.script:install-clean: &install-clean
+  'npm i --quiet --prefer-offline --cache=tmp/npm'
+
+.script:install-strict: &install-strict
+  'npm ci --quiet --prefer-offline --cache=tmp/npm'
+
+.script:install-force: &install-force
+  'npm i --force --quiet --prefer-offline --cache=tmp/npm'
+
+.script:install-legacy: &install-legacy
+  'npm i --legacy-peer-deps --quiet --prefer-offline --cache=tmp/npm'
+
+.script:smoke-build: &smoke-build |-
+  npm run nx run-many -- --all --target=lint
+  npm run nx run-many -- --all --target=test
+  npm run nx run-many -- --all --target=build
+  npm run nx run-many -- --all --target=build-storybook
+  npm run dep-graph -- --file=dist/dep-graph/index.html
+
+.cache:npm: &npm-cache
+  key: 'monorepo-npm-$CI_COMMIT_BRANCH-$CI_JOB_NAME'
+  paths: [ tmp/npm ]
+  policy: pull-push
+
+.cache:node: &node-cache
+  key:
+    prefix: 'monorepo-node-$CI_COMMIT_BRANCH-$CI_JOB_NAME'
+    files: [ package-lock.json ]
+  paths: [ node_modules ]
+  policy: pull-push
+
+.job:base:
+  stage: build
+  cache: *npm-cache
+  before_script:
+    - 'node -v'
+    - 'npm -v'
+  after_script:
+    - 'npm ls'
+    - 'npm outdated'
+    - 'git add -A && git diff --cached'
+
+stable-install:
+  extends: .job:base
+  except: [ master ]
+  script:
+    - *install-strict
+    - *smoke-build
+
+stable-build:
+  extends: .job:base
+  only: [ master ]
+  script:
+    - *install-strict
+    - *smoke-build
+  artifacts:
+    paths:
+      - node_modules
+      - package.json
+      - package-lock.json
+
+next-clean:
+  extends: .job:base
+  script:
+    - 'rm package-lock.json'
+    - *install-clean
+    - *smoke-build
+  allow_failure: true
+
+next-force:
+  extends: .job:base
+  script:
+    - 'rm package-lock.json'
+    - *install-force
+    - *smoke-build
+  allow_failure: true
+
+next-legacy:
+  extends: .job:base
+  script:
+    - 'rm package-lock.json'
+    - *install-legacy
+    - *smoke-build
+  allow_failure: true

@@ -1,0 +1,4 @@
+#!/bin/sh
+# Hook for replacing `git commit` with commitizen
+
+# exec < /dev/tty && node_modules/.bin/cz --hook || true
