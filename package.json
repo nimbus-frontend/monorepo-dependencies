@@ -2,7 +2,7 @@
   "name": "frontend-monorepo",
   "version": "0.0.0-DO-NOT-TOUCH",
   "scripts": {
-    "install-fast": "npm i --legacy-peer-deps --quiet --prefer-offline --cache=./tmp/npm",
+    "install-new": "npm i --legacy-peer-deps --quiet --prefer-offline --cache=./tmp/npm",
     "install-strict": "npm ci --quiet --prefer-offline --cache=./tmp/npm",
     "prepare": "husky install",
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main",
