@@ -44,6 +44,14 @@ npm run install-new dotenv@10.0.0 -E -D
 npm run install-new @storybook/{addon-actions@6.2.8,addon-links@6.2.7} -E -D
 ```
 
+```shell
+# Smoke build:
+npm run nx run-many -- --all --target=lint
+npm run nx run-many -- --all --target=test
+npm run nx run-many -- --all --target=build
+npm run nx run-many -- --all --target=build-storybook
+```
+
 ## P.S.
 
 For now there are 3 strategies to fresh install dependencies:
