@@ -43,3 +43,12 @@ npm run install-new @ngrx/{effects,entity}@12.0.0 -E -S
 npm run install-new dotenv@10.0.0 -E -D
 npm run install-new @storybook/{addon-actions@6.2.8,addon-links@6.2.7} -E -D
 ```
+
+## P.S.
+
+For now there are 3 strategies to fresh install dependencies:
+1. `npm install`
+2. `npm install --force`
+3. `npm install --legacy-peer-deps`
+
+Current implementation of `npm run install-fast` based on strategy #3
