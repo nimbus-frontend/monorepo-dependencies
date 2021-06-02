@@ -111,6 +111,7 @@
     "@storybook/angular": "6.2.9",
     "@storybook/api": "6.2.9",
     "@storybook/builder-webpack5": "6.2.9",
+    "@storybook/theming": "6.2.9",
     "@types/jest": "26.0.23",
     "@types/node": "15.6.1",
     "@types/webpack": "5.28.0",
