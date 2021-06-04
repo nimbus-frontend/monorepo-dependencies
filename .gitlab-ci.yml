@@ -2,7 +2,7 @@ stages:
   - build
 
 default:
-  image: 'registry.nimbusweb.co/docker/nimbus-node:16.2'
+  image: 'registry.nimbusweb.co/docker/nimbus-node:16.3'
 
 .script:install-clean: &install-clean
   'npm i --quiet --prefer-offline --cache=tmp/npm'
