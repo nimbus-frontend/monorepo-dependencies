@@ -5,16 +5,16 @@ default:
   image: 'registry.nimbusweb.co/docker/nimbus-node:16.3'
 
 .script:install-clean: &install-clean
-  'npm i --quiet --prefer-offline --cache=tmp/npm'
+  'npm run install-clean'
 
 .script:install-strict: &install-strict
-  'npm ci --quiet --prefer-offline --cache=tmp/npm'
+  'npm run install-strict'
 
 .script:install-force: &install-force
-  'npm i --force --quiet --prefer-offline --cache=tmp/npm'
+  'npm run install-force'
 
 .script:install-legacy: &install-legacy
-  'npm i --legacy-peer-deps --quiet --prefer-offline --cache=tmp/npm'
+  'npm run install-legacy'
 
 .script:smoke-build: &smoke-build |-
   npm run nx run-many -- --all --target=lint
