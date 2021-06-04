@@ -23,7 +23,14 @@ Mirror: https://github.com/nimbus-frontend/monorepo-dependencies
 ```shell
 # Fully consistent across environments
 # Typical first install on dev environment
+# Slow
 npm run install-strict
+```
+
+```shell
+# Not fully consistent, can update deps on lvl > 2
+# Very fast with existing cache
+npm run install-fast
 ```
 
 ```shell
