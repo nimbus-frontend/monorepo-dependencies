@@ -6,7 +6,7 @@
 [![Security Issues][security-img]][snyk-url]
 
 [npm-img]: https://img.shields.io/badge/npm-7.13.0-brightgreen
-[node-img]: https://img.shields.io/badge/node-16.2.0-brightgreen
+[node-img]: https://img.shields.io/badge/node-16.3.0-brightgreen
 [snyk-url]: https://snyk.io/test/github/nimbus-frontend/monorepo-dependencies
 [deps-img]: https://status.david-dm.org/gh/nimbus-frontend/monorepo-dependencies.svg?ref=master
 [dev-deps-img]: https://status.david-dm.org/gh/nimbus-frontend/monorepo-dependencies.svg?ref=master&type=dev
