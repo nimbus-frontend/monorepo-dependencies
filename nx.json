@@ -25,23 +25,5 @@
       }
     }
   },
-  "projects": {
-    "client": {
-      "tags": []
-    },
-    "client-e2e": {
-      "tags": [],
-      "implicitDependencies": ["client"]
-    },
-    "api": {
-      "tags": []
-    },
-    "ui-kit": {
-      "tags": []
-    },
-    "ui-kit-e2e": {
-      "tags": [],
-      "implicitDependencies": ["ui-kit"]
-    }
-  }
+  "projects": {}
 }
