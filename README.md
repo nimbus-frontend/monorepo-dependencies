@@ -39,14 +39,14 @@ npm run install-new
 
 ```shell
 # Adding dependencies
-npm run install-new @nestjs/core@7.6.17 -E -S
-npm run install-new @ngrx/{effects,entity}@12.0.0 -E -S
+npm run install-dep @nestjs/core@7.6.17
+npm run install-dep @ngrx/{effects,entity}@12.0.0
 ```
 
 ```shell
 # Adding dev dependencies:
-npm run install-new dotenv@10.0.0 -E -D
-npm run install-new @storybook/{addon-actions@6.2.8,addon-links@6.2.7} -E -D
+npm run install-dev dotenv@10.0.0
+npm run install-dev @storybook/{addon-actions@6.2.8,addon-links@6.2.7}
 ```
 
 ```shell
