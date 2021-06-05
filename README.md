@@ -64,8 +64,7 @@ For now there are 3 strategies to fresh install dependencies:
 2. `npm install --force`
 3. `npm install --legacy-peer-deps`
 
-Current implementation of `npm run install-fast` and `npm run install-new` are based on strategy #3
-
+Current implementation of `npm run install-(fast|new|dep|dev)` are based on strategy #3
 
 ## Core Packages:
 
