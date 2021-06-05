@@ -25,5 +25,29 @@
       }
     }
   },
-  "projects": {}
+  "projects": {
+    "website-client": {
+      "tags": ["app:frontend"]
+    },
+    "website-client-e2e": {
+      "tags": [],
+      "implicitDependencies": ["website-client"]
+    },
+    "app-client": {
+      "tags": ["app:frontend"]
+    },
+    "app-client-e2e": {
+      "tags": [],
+      "implicitDependencies": ["app-client"]
+    },
+    "api-gateway": {
+      "tags": ["app:backend"]
+    },
+    "api-proxy": {
+      "tags": ["app:backend"]
+    },
+    "socket-server": {
+      "tags": ["app:backend"]
+    }
+  }
 }
