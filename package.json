@@ -20,6 +20,7 @@
     "affected:graph": "nx affected:dep-graph",
     "format:write": "nx format:write",
     "format:check": "nx format:check",
+    "lint-staged": "nx format:write && nx run-many --all --target=lint --fix",
     "generator": "nx workspace-generator",
     "dep-graph": "nx dep-graph"
   },
